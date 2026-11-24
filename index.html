@@ -1,371 +1,376 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StudAuraX | Smart Study Planner</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudAuraX | Study Planner</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- HEADER -->
-<header>
-    <nav class="nav-container">
+<div class="app">
 
-        <a href="#" class="logo">
-            ⚡ Stud<span>AuraX</span>
-        </a>
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">✦ stud<span>Aura</span>X</div>
 
-        <ul class="nav-links">
-            <li><a href="#planner">Study Planner</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#demo">Flashcards</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#faq">FAQ</a></li>
-        </ul>
+    <p class="side-heading">WORKSPACE</p>
 
-        <a href="#planner" class="btn">Get Started</a>
+    <button class="nav active" data-page="home">⌂ Overview</button>
+    <button class="nav" data-page="planner">▦ Study Planner</button>
+    <button class="nav" data-page="flashcards">▤ Flashcards</button>
+    <button class="nav" data-page="focus">◷ Focus Room</button>
+    <button class="nav" data-page="progress">↗ Progress</button>
 
-    </nav>
-</header>
-
-
-<!-- HERO SECTION -->
-<section class="hero">
-
-    <span class="badge">✨ Your Personal Study Companion</span>
-
-    <h1>
-        Master Any Subject<br>
-        with <span>StudAuraX</span>
-    </h1>
-
-    <p>
-        Plan your studies, manage your time, create personalised
-        timetables and improve your learning with smart study tools.
-    </p>
-
-    <div class="hero-btns">
-        <a href="#planner" class="btn">Create My Study Plan</a>
-        <a href="#features" class="btn btn-outline">Explore Features</a>
+    <div class="sidebar-bottom">
+      <p>✧ Small steps every day add up to big results.</p>
+      <button id="theme-button" class="nav">⚙ Change Theme</button>
     </div>
+  </aside>
 
-</section>
+  <main class="main">
 
+    <header class="topbar">
+      <button id="menu-button" class="menu-button">☰</button>
+      <span>Your workspace / <b id="page-title">Overview</b></span>
+      <span id="date-label"></span>
+    </header>
 
-<!-- STUDY PLANNER -->
-<section class="planner-section" id="planner">
+    <!-- HOME -->
+    <section class="page active" id="home">
 
-    <div class="section-title">
-        <span class="badge">PERSONALISED LEARNING</span>
-        <h2>Create Your Study Plan</h2>
-        <p>Choose your subjects and organise your study schedule.</p>
-    </div>
+      <div class="welcome">
+        <div>
+          <p class="eyebrow">YOUR PERSONAL STUDY SPACE</p>
+          <h1>Your growth starts <span>right here.</span></h1>
+          <p class="muted">A little progress every day creates a lot of change.</p>
+        </div>
+        <div class="welcome-star">✦</div>
+      </div>
 
-    <div class="planner-container">
-
-        <!-- SUBJECT INPUT -->
-        <div class="planner-card">
-
-            <h3>📚 Add Your Subjects</h3>
-
-            <label for="subject-name">Subject Name</label>
-            <input
-                type="text"
-                id="subject-name"
-                placeholder="Example: Mathematics"
-            >
-
-            <label for="subject-hours">Study Hours Per Week</label>
-            <input
-                type="number"
-                id="subject-hours"
-                placeholder="Example: 5"
-                min="1"
-            >
-
-            <button class="btn btn-full" id="add-subject">
-                + Add Subject
-            </button>
-
-            <div id="subject-list"></div>
-
+      <div class="stats">
+        <div class="stat">
+          <span>◷</span>
+          <p>Study time today</p>
+          <h2 id="home-today">0 min</h2>
         </div>
 
-
-        <!-- TIME INPUT -->
-        <div class="planner-card">
-
-            <h3>⏰ Set Your Availability</h3>
-
-            <label for="study-days">Study Days Per Week</label>
-            <input
-                type="number"
-                id="study-days"
-                min="1"
-                max="7"
-                value="6"
-            >
-
-            <label for="daily-hours">Available Hours Per Day</label>
-            <input
-                type="number"
-                id="daily-hours"
-                min="1"
-                max="16"
-                value="3"
-            >
-
-            <button class="btn btn-full" id="generate-plan">
-                Generate My Timetable
-            </button>
-
+        <div class="stat">
+          <span>✓</span>
+          <p>Sessions completed</p>
+          <h2 id="home-sessions">0</h2>
         </div>
 
-    </div>
+        <div class="stat">
+          <span>▦</span>
+          <p>Your subjects</p>
+          <h2 id="home-subjects">0</h2>
+        </div>
 
-    <!-- GENERATED TIMETABLE -->
-    <div id="timetable-container"></div>
+        <div class="stat">
+          <span>✧</span>
+          <p>Weekly goal</p>
+          <h2 id="home-goal">0%</h2>
+        </div>
+      </div>
 
-</section>
-
-
-<!-- FEATURES SECTION -->
-<section class="features" id="features">
-
-    <div class="section-title">
-        <span class="badge">SMART LEARNING TOOLS</span>
-        <h2>Everything You Need to Study Better</h2>
-    </div>
-
-    <div class="grid">
+      <div class="home-grid">
 
         <div class="card">
-            <div class="card-icon">📅</div>
-            <h3>Smart Study Planner</h3>
-            <p>
-                Create personalised study schedules based on your
-                subjects and available time.
-            </p>
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">YOUR ROUTINE</p>
+              <h2>Today's plan</h2>
+            </div>
+            <button class="text-button" data-go="planner">View planner →</button>
+          </div>
+          <div id="home-plan" class="home-plan">
+            <p class="muted">Create your timetable to see today's plan here.</p>
+          </div>
         </div>
 
         <div class="card">
-            <div class="card-icon">🧠</div>
-            <h3>Smart Flashcards</h3>
-            <p>
-                Test your knowledge and remember important concepts
-                using flashcards.
-            </p>
+          <p class="eyebrow">QUICK ACTIONS</p>
+          <h2>What would you like to do?</h2>
+
+          <button class="quick-action" data-go="planner">
+            <span>▦</span>
+            <div><b>Plan my week</b><small>Organise your study hours</small></div>
+            →
+          </button>
+
+          <button class="quick-action" data-go="flashcards">
+            <span>▤</span>
+            <div><b>Review flashcards</b><small>Practise your subjects</small></div>
+            →
+          </button>
+
+          <button class="quick-action" data-go="focus">
+            <span>◷</span>
+            <div><b>Start focusing</b><small>Begin a focus session</small></div>
+            →
+          </button>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- PLANNER -->
+    <section class="page" id="planner">
+
+      <div class="page-heading">
+        <p class="eyebrow">PLAN WITH PURPOSE</p>
+        <h1>Your Study Planner</h1>
+        <p class="muted">Add your subjects and create your own weekly timetable.</p>
+      </div>
+
+      <div class="two-column">
+
+        <div class="card">
+          <h2>Your subjects</h2>
+          <p class="muted">Add the subjects you want to study.</p>
+
+          <form id="subject-form">
+            <label>Subject name</label>
+            <input id="subject-name" type="text" placeholder="e.g. Computer Networks" required>
+
+            <label>Hours per week</label>
+            <input id="subject-hours" type="number" min="1" max="40" value="3" required>
+
+            <button class="primary" type="submit">+ Add subject</button>
+          </form>
+
+          <div id="subject-list"></div>
         </div>
 
         <div class="card">
-            <div class="card-icon">⏱️</div>
-            <h3>Focus Pomodoro</h3>
-            <p>
-                Improve concentration using focused study sessions
-                and regular breaks.
-            </p>
+          <h2>Your availability</h2>
+          <p class="muted">Choose when you are free to study.</p>
+
+          <label>Study days</label>
+          <div class="days">
+            <label><input type="checkbox" value="Mon" checked> Mon</label>
+            <label><input type="checkbox" value="Tue" checked> Tue</label>
+            <label><input type="checkbox" value="Wed" checked> Wed</label>
+            <label><input type="checkbox" value="Thu" checked> Thu</label>
+            <label><input type="checkbox" value="Fri" checked> Fri</label>
+            <label><input type="checkbox" value="Sat"> Sat</label>
+            <label><input type="checkbox" value="Sun"> Sun</label>
+          </div>
+
+          <label>Hours per day: <b id="hours-label">2</b></label>
+          <input type="range" id="daily-hours" min="1" max="8" value="2">
+
+          <label>Preferred starting time</label>
+          <select id="start-time">
+            <option value="09:00">9:00 AM</option>
+            <option value="10:00">10:00 AM</option>
+            <option value="13:00">1:00 PM</option>
+            <option value="15:00">3:00 PM</option>
+            <option value="17:00">5:00 PM</option>
+            <option value="18:00">6:00 PM</option>
+          </select>
+
+          <button class="primary full" id="generate-plan">Generate timetable</button>
         </div>
 
-        <div class="card">
-            <div class="card-icon">📊</div>
-            <h3>Progress Tracking</h3>
-            <p>
-                Monitor your study progress and keep track of
-                your learning goals.
-            </p>
+      </div>
+
+      <div class="card">
+        <div class="section-heading">
+          <h2>Your weekly timetable</h2>
+          <button class="text-button" id="clear-plan">Clear</button>
+        </div>
+        <div id="timetable" class="timetable">
+          <p class="muted">Your timetable will appear here.</p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- FLASHCARDS -->
+    <section class="page" id="flashcards">
+
+      <div class="page-heading">
+        <p class="eyebrow">ACTIVE RECALL</p>
+        <h1>Flashcard Studio</h1>
+        <p class="muted">Create flashcards for any subject and practise them.</p>
+      </div>
+
+      <div class="card">
+        <div class="section-heading">
+          <div>
+            <h2>Your flashcards</h2>
+            <p class="muted">Create your own question and answer cards.</p>
+          </div>
+          <button class="primary" id="add-card">+ Create flashcard</button>
         </div>
 
-    </div>
+        <div class="flash-layout">
+          <div>
+            <label>Select subject</label>
+            <select id="deck-select">
+              <option value="all">All subjects</option>
+            </select>
+            <div id="flashcard-count" class="muted"></div>
+          </div>
 
-</section>
-
-
-<!-- FLASHCARD DEMO -->
-<section class="demo-section" id="demo">
-
-    <div class="section-title">
-        <span class="badge">INTERACTIVE LEARNING</span>
-        <h2>Try a Flashcard</h2>
-        <p>Click the card to reveal the answer.</p>
-    </div>
-
-    <div class="demo-container">
-
-        <div class="flashcard-box" id="flashcard">
-
-            <div id="card-text">
-                Question: What is Spaced Repetition?
+          <div class="flashcard-area">
+            <div class="flashcard" id="flashcard">
+              <small id="card-side">QUESTION</small>
+              <h2 id="card-content">Create your first flashcard!</h2>
+              <p>Click the card to reveal the answer.</p>
             </div>
 
+            <div class="card-controls">
+              <button class="outline" id="previous-card">← Previous</button>
+              <button class="primary" id="next-card">Next →</button>
+            </div>
+
+            <div class="card-controls">
+              <button class="text-button" id="edit-card">Edit</button>
+              <button class="text-button danger" id="delete-card">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- FOCUS -->
+    <section class="page" id="focus">
+
+      <div class="page-heading">
+        <p class="eyebrow">FOCUS ON YOURSELF</p>
+        <h1>Your Focus Room</h1>
+        <p class="muted">Give yourself time to concentrate and recharge.</p>
+      </div>
+
+      <div class="two-column">
+
+        <div class="card timer-card">
+          <div class="timer-tabs">
+            <button class="timer-mode active" data-time="25">Focus</button>
+            <button class="timer-mode" data-time="5">Short break</button>
+            <button class="timer-mode" data-time="15">Long break</button>
+          </div>
+
+          <p class="eyebrow" id="timer-label">TIME TO FOCUS</p>
+          <div class="timer" id="timer">25:00</div>
+
+          <div class="card-controls">
+            <button class="primary" id="timer-start">Start</button>
+            <button class="outline" id="timer-reset">Reset</button>
+          </div>
         </div>
 
-        <div class="demo-controls">
+        <div class="card">
+          <p class="eyebrow">SOUNDTRACK YOUR SESSION</p>
+          <h2>Study sounds</h2>
+          <p class="muted">Choose an ambient sound for your study time.</p>
 
-            <button class="btn btn-outline" id="prev-btn">
-                ← Previous
-            </button>
+          <div class="sound-options">
+            <button class="sound-option active" data-sound="rain">☂ Soft rain</button>
+            <button class="sound-option" data-sound="noise">〰 Brown noise</button>
+            <button class="sound-option" data-sound="tone">♫ Soft tones</button>
+          </div>
 
-            <span id="card-index">Card 1 of 3</span>
+          <button class="primary full" id="sound-toggle">▶ Play sound</button>
 
-            <button class="btn" id="next-btn">
-                Next →
-            </button>
-
+          <label>Volume: <span id="volume-label">25%</span></label>
+          <input type="range" id="volume" min="0" max="100" value="25">
+          <p class="muted">Press play to start the sound. Your browser will not autoplay audio.</p>
         </div>
 
+      </div>
+
+    </section>
+
+    <!-- PROGRESS -->
+    <section class="page" id="progress">
+
+      <div class="page-heading">
+        <p class="eyebrow">EVERY EFFORT COUNTS</p>
+        <h1>Your Progress</h1>
+        <p class="muted">Track your study time and celebrate your consistency.</p>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <span>◷</span>
+          <p>Total study time</p>
+          <h2 id="total-time">0 min</h2>
+        </div>
+        <div class="stat">
+          <span>✓</span>
+          <p>Completed sessions</p>
+          <h2 id="total-sessions">0</h2>
+        </div>
+        <div class="stat">
+          <span>▦</span>
+          <p>This week's time</p>
+          <h2 id="week-time">0 min</h2>
+        </div>
+      </div>
+
+      <div class="two-column">
+        <div class="card">
+          <h2>Last 7 days</h2>
+          <div id="weekly-chart" class="chart"></div>
+        </div>
+
+        <div class="card">
+          <h2>Weekly study goal</h2>
+          <div class="goal-circle" id="goal-circle">
+            <strong id="goal-percent">0%</strong>
+          </div>
+          <p id="goal-description" class="muted">Set your weekly study target.</p>
+
+          <label>Weekly target: <b id="goal-label">10 hours</b></label>
+          <input type="range" id="goal-hours" min="1" max="40" value="10">
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="section-heading">
+          <h2>Recent sessions</h2>
+          <button class="text-button danger" id="clear-history">Clear history</button>
+        </div>
+        <div id="history"></div>
+      </div>
+
+    </section>
+
+    <footer>✦ StudAuraX · Made for your next little win.</footer>
+
+  </main>
+</div>
+
+<!-- FLASHCARD MODAL -->
+<div class="modal-backdrop" id="modal" hidden>
+  <form class="modal" id="card-form">
+    <button type="button" class="close-modal" id="close-modal">×</button>
+    <p class="eyebrow">CREATE YOUR CARD</p>
+    <h2 id="modal-heading">New flashcard</h2>
+
+    <label>Subject / deck</label>
+    <input id="card-subject" type="text" placeholder="e.g. Computer Networks" required>
+
+    <label>Question</label>
+    <textarea id="card-question" rows="3" required></textarea>
+
+    <label>Answer</label>
+    <textarea id="card-answer" rows="4" required></textarea>
+
+    <div class="card-controls">
+      <button type="button" class="outline" id="cancel-modal">Cancel</button>
+      <button type="submit" class="primary">Save flashcard</button>
     </div>
+  </form>
+</div>
 
-</section>
-
-
-<!-- PRICING SECTION -->
-<section class="pricing" id="pricing">
-
-    <div class="section-title">
-        <span class="badge">SIMPLE PLANS</span>
-        <h2>Choose Your Learning Experience</h2>
-    </div>
-
-    <div class="grid">
-
-        <div class="price-card">
-
-            <h3>Starter Student</h3>
-
-            <div class="price">Free</div>
-
-            <p>Basic study planning tools.</p>
-
-            <br>
-
-            <a href="#planner" class="btn btn-full">
-                Get Started
-            </a>
-
-        </div>
-
-
-        <div class="price-card popular">
-
-            <span class="badge badge-popular">Popular</span>
-
-            <h3>Pro Scholar</h3>
-
-            <div class="price">₹199</div>
-
-            <p>Advanced learning and productivity tools.</p>
-
-            <br>
-
-            <a href="#planner" class="btn btn-full">
-                Explore
-            </a>
-
-        </div>
-
-
-        <div class="price-card">
-
-            <h3>Campus Team</h3>
-
-            <div class="price">₹499</div>
-
-            <p>Learning tools for student groups.</p>
-
-            <br>
-
-            <a href="#planner" class="btn btn-full">
-                Explore
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- FAQ SECTION -->
-<section class="faq" id="faq">
-
-    <div class="section-title">
-        <span class="badge">HAVE QUESTIONS?</span>
-        <h2>Frequently Asked Questions</h2>
-    </div>
-
-
-    <div class="faq-item">
-
-        <div class="faq-question">
-            Can I choose my own subjects?
-            <span class="faq-toggle-symbol">+</span>
-        </div>
-
-        <div class="faq-answer">
-            Yes! You can add any subjects you want and create
-            a personalised study schedule.
-        </div>
-
-    </div>
-
-
-    <div class="faq-item">
-
-        <div class="faq-question">
-            Can I customise my study timings?
-            <span class="faq-toggle-symbol">+</span>
-        </div>
-
-        <div class="faq-answer">
-            Yes. You can set your available study hours and
-            choose how many days you want to study.
-        </div>
-
-    </div>
-
-
-    <div class="faq-item">
-
-        <div class="faq-question">
-            Is StudAuraX free to use?
-            <span class="faq-toggle-symbol">+</span>
-        </div>
-
-        <div class="faq-answer">
-            The basic study planning features can be used
-            for free.
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- FOOTER -->
-<footer>
-
-    <h3>⚡ StudAuraX</h3>
-
-    <p>
-        Organise your time. Improve your learning.
-        Achieve your goals.
-    </p>
-
-    <br>
-
-    <p>© 2026 StudAuraX. Built for continuous learning.</p>
-
-</footer>
-
+<div id="toast" class="toast"></div>
 
 <script src="script.js"></script>
-
 </body>
 </html>

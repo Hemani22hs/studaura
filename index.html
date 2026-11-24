@@ -3,154 +3,369 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StudAura | AI Study Assistant & Smart Learning Platform</title>
-    <meta name="description" content="Transform your study notes and PDFs into interactive flashcards, AI summaries, and video lessons with StudAura.">
-    <!-- Fonts & External CSS Link -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <title>StudAuraX | Smart Study Planner</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <!-- Header Navigation -->
-    <header>
-        <div class="nav-container">
-            <a href="#" class="logo">⚡ Stud<span>Aura</span></a>
-            <ul class="nav-links">
-                <li><a href="#features">Features</a></li>
-                <li><a href="#demo">Live Demo</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#faq">FAQ</a></li>
-            </ul>
-            <a href="#pricing" class="btn">Get Started Free</a>
-        </div>
-    </header>
+<!-- HEADER -->
+<header>
+    <nav class="nav-container">
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <span class="badge">🚀 Powered by Next-Gen AI</span>
-        <h1>Master Any Subject <span>10x Faster</span> with StudAura</h1>
-        <p>Turn heavy textbooks, PDFs, and lecture notes into interactive flashcards, instant summaries, and smart video quizzes in seconds.</p>
-        <div class="hero-btns">
-            <a href="#demo" class="btn">Try Live Demo</a>
-            <a href="#features" class="btn btn-outline">Explore Features</a>
-        </div>
-    </section>
+        <a href="#" class="logo">
+            ⚡ Stud<span>AuraX</span>
+        </a>
 
-    <!-- Features Section -->
-    <section id="features" class="features">
-        <div class="section-title">
-            <h2>Everything You Need to Ace Your Exams</h2>
-        </div>
-        <div class="grid">
-            <div class="card">
-                <div class="card-icon">📚</div>
-                <h3>Instant PDF Summarizer</h3>
-                <p>Upload lecture notes or research papers to extract core concepts, bullet points, and key formulas instantly.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">🎴</div>
-                <h3>Smart Flashcard Builder</h3>
-                <p>AI automatically generates spaced-repetition flashcard decks with self-assessment tracking.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">⏱️</div>
-                <h3>Focus Pomodoro Engine</h3>
-                <p>Stay in the flow state with integrated study timers, background binaural beats, and break reminders.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">📊</div>
-                <h3>Mastery Analytics</h3>
-                <p>Track your learning retention over time with visual progress charts and memory decay predictions.</p>
-            </div>
-        </div>
-    </section>
+        <ul class="nav-links">
+            <li><a href="#planner">Study Planner</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#demo">Flashcards</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#faq">FAQ</a></li>
+        </ul>
 
-    <!-- Interactive Live Flashcard Demo -->
-    <section id="demo" class="demo-section">
-        <div class="section-title">
-            <h2>Interactive Flashcard Preview</h2>
-            <p style="color: var(--text-muted); margin-top: 0.5rem;">Click the card below or press <kbd style="background:#1e293b; padding:2px 6px; border-radius:4px; font-size:0.8rem;">Spacebar</kbd> to flip!</p>
-        </div>
-        <div class="demo-container">
-            <div class="flashcard-box" id="flashcard">
-                <span id="card-text">❓ Question: What is Spaced Repetition?</span>
-            </div>
-            <div class="demo-controls">
-                <button class="btn btn-dark" id="prev-btn">← Previous</button>
-                <span id="card-index">Card 1 of 3</span>
-                <button class="btn" id="next-btn">Next →</button>
-            </div>
-        </div>
-    </section>
+        <a href="#planner" class="btn">Get Started</a>
 
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing">
-        <div class="section-title">
-            <h2>Flexible Plans for Every Learner</h2>
-        </div>
-        <div class="grid">
-            <div class="price-card">
-                <h3>Starter Student</h3>
-                <div class="price">$0 <span>/mo</span></div>
-                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Essential tools for high school & college prep.</p>
-                <a href="#" class="btn btn-full">Sign Up Free</a>
-            </div>
-            <div class="price-card popular">
-                <span class="badge badge-popular">Most Popular</span>
-                <h3>Pro Scholar</h3>
-                <div class="price">$9.99 <span>/mo</span></div>
-                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Unlimited AI summaries, PDF uploads & audio prep.</p>
-                <a href="#" class="btn btn-full">Start 7-Day Free Trial</a>
-            </div>
-            <div class="price-card">
-                <h3>Campus Team</h3>
-                <div class="price">$19.99 <span>/mo</span></div>
-                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Shared study decks for study groups & tutors.</p>
-                <a href="#" class="btn btn-full">Get Team Access</a>
-            </div>
-        </div>
-    </section>
+    </nav>
+</header>
 
-    <!-- FAQ Section -->
-    <section id="faq" class="faq">
-        <div class="section-title">
-            <h2>Frequently Asked Questions</h2>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">
-                <span>How does StudAura generate flashcards from PDFs?</span>
-                <span class="faq-toggle-symbol">+</span>
-            </div>
-            <div class="faq-answer">
-                StudAura uses advanced Natural Language Processing to extract key definitions, historical dates, and core concepts from your document, auto-formatting them into active recall question-and-answer pairs.
-            </div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">
-                <span>Is StudAura free to use for students?</span>
-                <span class="faq-toggle-symbol">+</span>
-            </div>
-            <div class="faq-answer">
-                Yes! The Starter Student plan is 100% free forever and includes access to core AI summarization and manual flashcard decks.
-            </div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">
-                <span>Can I export my decks to Anki or Quizlet?</span>
-                <span class="faq-toggle-symbol">+</span>
-            </div>
-            <div class="faq-answer">
-                Absolutely. You can export any generated flashcard deck directly into CSV format for easy import into Anki, Quizlet, or Notion.
-            </div>
-        </div>
-    </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2026 StudAura. Built for continuous learning. All rights reserved.</p>
-    </footer>
+<!-- HERO SECTION -->
+<section class="hero">
 
-    <!-- External JavaScript Link -->
-    <script src="script.js"></script>
+    <span class="badge">✨ Your Personal Study Companion</span>
+
+    <h1>
+        Master Any Subject<br>
+        with <span>StudAuraX</span>
+    </h1>
+
+    <p>
+        Plan your studies, manage your time, create personalised
+        timetables and improve your learning with smart study tools.
+    </p>
+
+    <div class="hero-btns">
+        <a href="#planner" class="btn">Create My Study Plan</a>
+        <a href="#features" class="btn btn-outline">Explore Features</a>
+    </div>
+
+</section>
+
+
+<!-- STUDY PLANNER -->
+<section class="planner-section" id="planner">
+
+    <div class="section-title">
+        <span class="badge">PERSONALISED LEARNING</span>
+        <h2>Create Your Study Plan</h2>
+        <p>Choose your subjects and organise your study schedule.</p>
+    </div>
+
+    <div class="planner-container">
+
+        <!-- SUBJECT INPUT -->
+        <div class="planner-card">
+
+            <h3>📚 Add Your Subjects</h3>
+
+            <label for="subject-name">Subject Name</label>
+            <input
+                type="text"
+                id="subject-name"
+                placeholder="Example: Mathematics"
+            >
+
+            <label for="subject-hours">Study Hours Per Week</label>
+            <input
+                type="number"
+                id="subject-hours"
+                placeholder="Example: 5"
+                min="1"
+            >
+
+            <button class="btn btn-full" id="add-subject">
+                + Add Subject
+            </button>
+
+            <div id="subject-list"></div>
+
+        </div>
+
+
+        <!-- TIME INPUT -->
+        <div class="planner-card">
+
+            <h3>⏰ Set Your Availability</h3>
+
+            <label for="study-days">Study Days Per Week</label>
+            <input
+                type="number"
+                id="study-days"
+                min="1"
+                max="7"
+                value="6"
+            >
+
+            <label for="daily-hours">Available Hours Per Day</label>
+            <input
+                type="number"
+                id="daily-hours"
+                min="1"
+                max="16"
+                value="3"
+            >
+
+            <button class="btn btn-full" id="generate-plan">
+                Generate My Timetable
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- GENERATED TIMETABLE -->
+    <div id="timetable-container"></div>
+
+</section>
+
+
+<!-- FEATURES SECTION -->
+<section class="features" id="features">
+
+    <div class="section-title">
+        <span class="badge">SMART LEARNING TOOLS</span>
+        <h2>Everything You Need to Study Better</h2>
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="card-icon">📅</div>
+            <h3>Smart Study Planner</h3>
+            <p>
+                Create personalised study schedules based on your
+                subjects and available time.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🧠</div>
+            <h3>Smart Flashcards</h3>
+            <p>
+                Test your knowledge and remember important concepts
+                using flashcards.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">⏱️</div>
+            <h3>Focus Pomodoro</h3>
+            <p>
+                Improve concentration using focused study sessions
+                and regular breaks.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">📊</div>
+            <h3>Progress Tracking</h3>
+            <p>
+                Monitor your study progress and keep track of
+                your learning goals.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FLASHCARD DEMO -->
+<section class="demo-section" id="demo">
+
+    <div class="section-title">
+        <span class="badge">INTERACTIVE LEARNING</span>
+        <h2>Try a Flashcard</h2>
+        <p>Click the card to reveal the answer.</p>
+    </div>
+
+    <div class="demo-container">
+
+        <div class="flashcard-box" id="flashcard">
+
+            <div id="card-text">
+                Question: What is Spaced Repetition?
+            </div>
+
+        </div>
+
+        <div class="demo-controls">
+
+            <button class="btn btn-outline" id="prev-btn">
+                ← Previous
+            </button>
+
+            <span id="card-index">Card 1 of 3</span>
+
+            <button class="btn" id="next-btn">
+                Next →
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PRICING SECTION -->
+<section class="pricing" id="pricing">
+
+    <div class="section-title">
+        <span class="badge">SIMPLE PLANS</span>
+        <h2>Choose Your Learning Experience</h2>
+    </div>
+
+    <div class="grid">
+
+        <div class="price-card">
+
+            <h3>Starter Student</h3>
+
+            <div class="price">Free</div>
+
+            <p>Basic study planning tools.</p>
+
+            <br>
+
+            <a href="#planner" class="btn btn-full">
+                Get Started
+            </a>
+
+        </div>
+
+
+        <div class="price-card popular">
+
+            <span class="badge badge-popular">Popular</span>
+
+            <h3>Pro Scholar</h3>
+
+            <div class="price">₹199</div>
+
+            <p>Advanced learning and productivity tools.</p>
+
+            <br>
+
+            <a href="#planner" class="btn btn-full">
+                Explore
+            </a>
+
+        </div>
+
+
+        <div class="price-card">
+
+            <h3>Campus Team</h3>
+
+            <div class="price">₹499</div>
+
+            <p>Learning tools for student groups.</p>
+
+            <br>
+
+            <a href="#planner" class="btn btn-full">
+                Explore
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FAQ SECTION -->
+<section class="faq" id="faq">
+
+    <div class="section-title">
+        <span class="badge">HAVE QUESTIONS?</span>
+        <h2>Frequently Asked Questions</h2>
+    </div>
+
+
+    <div class="faq-item">
+
+        <div class="faq-question">
+            Can I choose my own subjects?
+            <span class="faq-toggle-symbol">+</span>
+        </div>
+
+        <div class="faq-answer">
+            Yes! You can add any subjects you want and create
+            a personalised study schedule.
+        </div>
+
+    </div>
+
+
+    <div class="faq-item">
+
+        <div class="faq-question">
+            Can I customise my study timings?
+            <span class="faq-toggle-symbol">+</span>
+        </div>
+
+        <div class="faq-answer">
+            Yes. You can set your available study hours and
+            choose how many days you want to study.
+        </div>
+
+    </div>
+
+
+    <div class="faq-item">
+
+        <div class="faq-question">
+            Is StudAuraX free to use?
+            <span class="faq-toggle-symbol">+</span>
+        </div>
+
+        <div class="faq-answer">
+            The basic study planning features can be used
+            for free.
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <h3>⚡ StudAuraX</h3>
+
+    <p>
+        Organise your time. Improve your learning.
+        Achieve your goals.
+    </p>
+
+    <br>
+
+    <p>© 2026 StudAuraX. Built for continuous learning.</p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
 </body>
 </html>
